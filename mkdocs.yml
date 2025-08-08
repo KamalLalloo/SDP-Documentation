@@ -1,4 +1,4 @@
-site_name: My Project Documentation
+site_name: SDP Project Documentation
 site_description: Documentation for My Project
 site_author: Your Name
 
@@ -13,13 +13,13 @@ theme:
   palette:
     - scheme: default
       primary: black
-      accent: blue
+      accent: pink
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
     - scheme: slate
       primary: black
-      accent: blue
+      accent: pink
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
@@ -34,7 +34,7 @@ theme:
     - search.share
 
 nav:
-  - User & Developer Guides:
+  - Documentation:
       - Overview: index.md
       - Team: team.md
       - Tech stack: tech-stack.md

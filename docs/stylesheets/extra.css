@@ -34,4 +34,5 @@
 .md-nav__link--active {
   background-color: rgba(255, 255, 255, 0.1);
   font-weight: 600;
+  color: palevioletred;
 }

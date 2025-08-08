@@ -1,6 +1,5 @@
 # Tech Stack
 
-- Python 3.11
-- Flask
-- PostgreSQL
-- Docker
+- React.js
+- Supabase
+- Node.js
