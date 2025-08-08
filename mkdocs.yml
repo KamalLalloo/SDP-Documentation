@@ -40,6 +40,4 @@ nav:
       - Tech stack: tech-stack.md
       - Setup: setup.md
   - API Services Reference:
-      - Prerequisites: prerequisites.md
       - Setup: setup.md
-      - Running the app: running.md
