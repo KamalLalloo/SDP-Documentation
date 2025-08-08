@@ -28,6 +28,8 @@ theme:
     - navigation.tabs
     - navigation.sections
     - navigation.top
+    - navigation.collapse # allows collapsing
+    - navigation.expand
     - toc.integrate
     - search.suggest
     - search.highlight
@@ -36,8 +38,11 @@ theme:
 nav:
   - Documentation:
       - Overview: index.md
+      - Features: features.md
       - Team: team.md
       - Tech stack: tech-stack.md
-      - Setup: setup.md
+      - Setup and Installation: setup.md
+  - Sprints:
+      - Sprint 1: Sprint1.md
   - API Services Reference:
       - Coming Soon: comingsoon.md

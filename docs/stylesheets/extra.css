@@ -3,7 +3,7 @@
   font-size: 1.1rem; /* default is ~0.8-1rem */
 }
 
-/* Make headings a bit bigger */
+/* Make headings a bit bigger in main content */
 .md-typeset h1 {
   font-size: 2.2rem;
 }
@@ -11,7 +11,7 @@
   font-size: 1.8rem;
 }
 
-/* Increase font size for navigation items */
+/* Increase font size for main navigation items (left sidebar) */
 .md-nav__link {
   font-size: 1.05rem; /* slightly larger than default */
   font-weight: 500; /* make text bolder */
@@ -35,4 +35,15 @@
   background-color: rgba(255, 255, 255, 0.1);
   font-weight: 600;
   color: palevioletred;
+}
+
+/* --- Smaller headings in the Table of Contents (right sidebar) --- */
+.md-nav--secondary .md-nav__link {
+  font-size: 0.85rem; /* smaller than main nav */
+  font-weight: 400; /* lighter */
+  opacity: 0.85; /* slightly faded */
+}
+
+.md-nav--secondary .md-nav__link:hover {
+  opacity: 1; /* full opacity on hover */
 }
