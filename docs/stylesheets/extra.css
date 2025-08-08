@@ -1,0 +1,37 @@
+/* Increase base font size */
+.md-typeset {
+  font-size: 1.1rem; /* default is ~0.8-1rem */
+}
+
+/* Make headings a bit bigger */
+.md-typeset h1 {
+  font-size: 2.2rem;
+}
+.md-typeset h2 {
+  font-size: 1.8rem;
+}
+
+/* Increase font size for navigation items */
+.md-nav__link {
+  font-size: 1.05rem; /* slightly larger than default */
+  font-weight: 500; /* make text bolder */
+}
+
+/* Make navigation links look like tabs */
+.md-nav__link {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+/* Hover effect */
+.md-nav__link:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Active (selected) link style */
+.md-nav__link--active {
+  background-color: rgba(255, 255, 255, 0.1);
+  font-weight: 600;
+}
