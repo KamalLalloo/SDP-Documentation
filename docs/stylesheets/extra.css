@@ -71,3 +71,54 @@
   opacity: 1;
   color: #ffffff !important; /* White on hover for contrast */
 }
+
+/* ==========================
+   Header Title (top left)
+   ========================== */
+.md-header__title {
+  font-size: 1.4rem; /* default ~1.1rem */
+  font-weight: 600; /* bolder */
+}
+
+/* ==========================
+   Navigation Tabs (top menu)
+   ========================== */
+.md-tabs__link {
+  font-size: 1.05rem; /* slightly larger than default */
+  font-weight: 500;
+  padding: 0.6em 1.2em; /* adds more breathing room */
+}
+
+/* Active tab */
+.md-tabs__link--active {
+  color: #eeb22c !important; /* highlight active tab in yellow */
+  font-weight: 600;
+}
+
+/* ==========================
+   Fix header cutoff issue
+   ========================== */
+
+/* Increase header bar height */
+.md-header {
+  min-height: 60px; /* default ~56px */
+}
+
+/* Adjust title alignment */
+.md-header__title {
+  line-height: 80px; /* match new height */
+}
+
+/* Adjust navigation tabs */
+.md-tabs {
+  height: 80px; /* taller tab bar */
+}
+.md-tabs__link {
+  line-height: 48px; /* vertically center text */
+  padding: 0 1.2em; /* spacing */
+}
+
+/* Hide the MkDocs Material logo */
+.md-header__button.md-logo {
+  display: none !important;
+}
