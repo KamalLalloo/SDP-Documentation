@@ -1,4 +1,4 @@
-site_name: SDP Project Documentation
+site_name: FootBook Documentation
 site_description: Documentation for My Project
 site_author: Your Name
 
@@ -11,24 +11,14 @@ theme:
     text: Open Sans
     code: Fira Code
   palette:
-    - scheme: default
-      primary: black
-      accent: pink
-      toggle:
-        icon: material/weather-night
-        name: Switch to dark mode
-    - scheme: slate
-      primary: black
-      accent: pink
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to light mode
-
+    scheme: slate # Dark mode only, no toggle
+    primary: black # overridden by CSS
+    accent: black # overridden by CSS
   features:
     - navigation.tabs
     - navigation.sections
     - navigation.top
-    - navigation.collapse # allows collapsing
+    - navigation.collapse
     - navigation.expand
     - toc.integrate
     - search.suggest

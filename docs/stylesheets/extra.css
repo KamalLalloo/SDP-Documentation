@@ -1,9 +1,30 @@
-/* Increase base font size */
-.md-typeset {
-  font-size: 1.1rem; /* default is ~0.8-1rem */
+/* ==========================
+   Custom Theme Overrides
+   ========================== */
+
+/* Override Material theme colors */
+:root {
+  --md-primary-fg-color: #2866a0; /* Primary blue (used in content links) */
+  --md-accent-fg-color: #eeb22c; /* Accent gold */
 }
 
-/* Make headings a bit bigger in main content */
+/* Base text */
+.md-typeset {
+  font-size: 1.1rem;
+  color: #ffffff; /* White text */
+}
+
+/* Headings */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  color: #eeb22c; /* Yellow headings */
+  font-weight: 600;
+}
+
 .md-typeset h1 {
   font-size: 2.2rem;
 }
@@ -11,39 +32,42 @@
   font-size: 1.8rem;
 }
 
-/* Increase font size for main navigation items (left sidebar) */
-.md-nav__link {
-  font-size: 1.05rem; /* slightly larger than default */
-  font-weight: 500; /* make text bolder */
-}
+/* ==========================
+   Navigation (Sidebar + TOC)
+   ========================== */
 
-/* Make navigation links look like tabs */
+/* Main sidebar links */
 .md-nav__link {
+  font-size: 1.05rem;
+  font-weight: 500;
   display: block;
   padding: 8px 12px;
   border-radius: 6px;
   transition: background-color 0.2s ease;
+  color: #eeb22c !important; /* Yellow links */
 }
 
 /* Hover effect */
 .md-nav__link:hover {
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(238, 178, 44, 0.15); /* Subtle gold highlight */
 }
 
 /* Active (selected) link style */
 .md-nav__link--active {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(238, 178, 44, 0.25); /* Stronger gold highlight */
   font-weight: 600;
-  color: palevioletred;
+  color: #eeb22c !important; /* Keep text yellow */
 }
 
-/* --- Smaller headings in the Table of Contents (right sidebar) --- */
+/* --- Table of Contents (right sidebar) --- */
 .md-nav--secondary .md-nav__link {
-  font-size: 0.85rem; /* smaller than main nav */
-  font-weight: 400; /* lighter */
-  opacity: 0.85; /* slightly faded */
+  font-size: 0.85rem;
+  font-weight: 400;
+  opacity: 0.85;
+  color: #eeb22c !important; /* Yellow in TOC as well */
 }
 
 .md-nav--secondary .md-nav__link:hover {
-  opacity: 1; /* full opacity on hover */
+  opacity: 1;
+  color: #ffffff !important; /* White on hover for contrast */
 }
