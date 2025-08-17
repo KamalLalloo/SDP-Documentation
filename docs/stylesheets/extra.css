@@ -111,10 +111,10 @@
 
 /* Adjust navigation tabs */
 .md-tabs {
-  height: 80px; /* taller tab bar */
+  height: 90px; /* taller tab bar */
 }
 .md-tabs__link {
-  line-height: 48px; /* vertically center text */
+  line-height: 37px; /* vertically center text */
   padding: 0 1.2em; /* spacing */
 }
 .md-header__button.md-logo img {
