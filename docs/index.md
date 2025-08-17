@@ -1,32 +1,25 @@
-# Sport Live Feeds — Overview
+# Footbook — Overview
 
 ## What is it?
 
-A real-time sports broadcasting and viewer experience tool. It ingests in-game events, keeps an authoritative game clock, and serves live scoreboards, timelines, and overlays for fans, commentators, and organizers.
+**Footbook** is a real-time football (soccer) live feed web application. It delivers live scores, match timelines, player events, and structured data for fans, commentators, and organizers. Starting with the English Premier League, the platform is designed to scale across multiple leagues such as the Bundesliga and beyond.
+
+The app ingests match events (goals, fouls, substitutions, etc.), maintains an authoritative game clock, and serves live scoreboards, timelines, and overlays through a modern web interface.
+
+---
 
 ## Why it exists
 
-- Live community streams and school leagues rarely have reliable score/clock graphics.
-- Existing tools are expensive, closed, or sport-specific.
-- Operators need a keyboard-first console that makes recording events fast and undoable.
+- Football fans want an accessible, **live and accurate match tracker** without relying on expensive, closed platforms.
+- Existing live score services are either delayed, not interactive, or limited in league coverage.
+- Organizers and community clubs often lack **easy-to-use tools** to manage and present live match data.
+- By using open, modern web technologies, Footbook provides a **lightweight and extensible platform** for both casual fans and professional organizers.
+
+---
 
 ## Who it’s for
 
-- **Operators**: match officials or volunteers entering events and managing the clock.
-- **Commentators/Productions**: need structured data and overlays for broadcast.
-- **Fans**: want an accurate, low-latency scorebug and event timeline.
-- **Organizers**: require archival logs and basic analytics.
-
-## High-level architecture (brief)
-
-- **Frontend**: Scoreboard, Timeline, Operator Console.
-- **APIs**: Match Setup (CRUD), Live Update (ingest), Feed API (snapshots and cursors), Realtime Gateway (WS/SSE).
-- **Backend services**: Projector derives `DisplayState` from immutable `EventLog`.
-- **Storage**: Postgres (events, matches, teams), Redis cache (hot display payloads).
-
-## Glossary
-
-- **Event Log**: Append-only list of timestamped game events.
-- **Display State**: Computed snapshot (score, clock, possession, phase).
-- **Projector**: Process that reduces events → state.
-- **Operator**: Person driving the match console.
+- **Fans**: Get real-time updates on goals, cards, substitutions, and match stats.
+- **Commentators & Media**: Access structured match data to enhance broadcasts and reporting.
+- **Organizers & Teams**: Create and manage matches, input live events, and maintain historical records.
+- **Operators (Admins)**: Use the match console to manage timelines, control the clock, and update scores manually when needed.

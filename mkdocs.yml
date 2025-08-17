@@ -7,7 +7,8 @@ extra_css:
 
 theme:
   name: material
-  logo: null
+  logo: images/fb-logo.png
+  favicon: images/fb-logo.png
   font:
     text: Open Sans
     code: Fira Code
@@ -33,6 +34,7 @@ nav:
       - Team: team.md
       - Tech stack: tech-stack.md
       - Setup and Installation: setup.md
+      - Database Schema: Database.md
   - Sprints:
       - Sprint 1: Sprint1.md
   - API Services Reference:
