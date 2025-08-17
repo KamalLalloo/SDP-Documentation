@@ -12,4 +12,4 @@
 ## Meeting Minutes and Planning
 
 All detailed sprint planning and meeting notes are maintained in this shared document:  
-[Google Doc — Sprint 1 Planning and Notes](https://docs.google.com/document/d/1IusU6bnwWj-45Vdwzi_BQU0rnW8opXQb8ELjPvnDL6o/edit?usp=sharing)
+[Google Doc — Sprint 1 Planning and Notes](https://docs.google.com/document/d/1IusU6bnwWj-45Vdwzi_BQU0rnW8opXQb8ELjPvnDL6o/edit?tab=t.w9oy98r4tpwk)
