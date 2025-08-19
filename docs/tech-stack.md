@@ -6,3 +6,4 @@
 - **Backend**: Node.js APIs for match setup, live updates, and data feeds.
 - **Database**: Supabase (Postgres) storing matches, teams, events, and user accounts.
 - **Authentication**: Google Auth via Supabase — secure login for admins, operators, and fans.
+- **Other**: GitHub Actions for CI/CD, Jest for testing.
