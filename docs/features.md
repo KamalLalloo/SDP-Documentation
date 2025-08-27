@@ -24,6 +24,7 @@ Footbook provides a set of core features designed to deliver real-time football 
 
 - Allows admins to **create new matches** before kickoff.
 - Add details like teams, players, and scheduled start time.
+- Supports **CSV uploads** so users can import personal or community matches.
 - Ensures that the match has all required info before going live.
 
 ---
@@ -33,6 +34,14 @@ Footbook provides a set of core features designed to deliver real-time football 
 - Operators can **manually add events** (goals, substitutions, cards, etc.) if external live feeds aren’t available.
 - Includes options to **pause/resume the clock** or edit the timeline if needed.
 - Useful for community matches or when official live data is unavailable.
+
+---
+
+#### User Reporting
+
+- Fans and organizers can **report incorrect match information** such as wrong scores, player names, or missing events.
+- Reports are stored for **review by operators/admins**, ensuring data accuracy.
+- A general reporting feature is available for **bugs, feedback, or inappropriate content**.
 
 ---
 
@@ -55,6 +64,7 @@ The user interface has dedicated screens for each key function:
 - **Event Timeline** — Chronological list of all major match events.
 - **Match Setup Screen** — Create and configure matches, assign teams, set times.
 - **Manual Input Panel** — Add events manually such as goals, fouls, and cards.
+- **User Reporting Panel** — Allows fans to flag incorrect match data or send general feedback.
 
 ---
 
@@ -66,6 +76,7 @@ The backend uses Supabase (Postgres) to store structured data:
 - **Event Log** — List of timestamped events (goals, fouls, substitutions, etc.).
 - **Display State** — Current score, clock, possession, and game phase.
 - **Player & Team Data** — Rosters that can be synced or manually entered.
+- **Uploaded Match Data** — Imported CSV data for custom or community games.
 
 ---
 
