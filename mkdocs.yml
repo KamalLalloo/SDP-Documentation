@@ -38,5 +38,7 @@ nav:
       - Database Schema: Database.md
   - Sprints:
       - Sprint 1: Sprint1.md
-  - API Services Reference:
-      - Coming Soon: comingsoon.md
+  - API Documentation:
+      - Overview: API-Overview.md
+      - Getting Started: API-Start.md
+      - API Endpoints: API-Endpoints.md
