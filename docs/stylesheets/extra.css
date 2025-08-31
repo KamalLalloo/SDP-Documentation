@@ -2,10 +2,26 @@
    Custom Theme Overrides
    ========================== */
 
+/* Import Montserrat from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
 /* Override Material theme colors */
 :root {
   --md-primary-fg-color: #2866a0; /* Primary blue (used in content links) */
-  --md-accent-fg-color: #eeb22c; /* Accent gold */
+  --md-accent-fg-color: #ff0000; /* Accent red */
+  --md-accent-blue-color: #00aaff; /* Bright blue */
+
+  --md-text-font-family: "Montserrat", sans-serif; /* Force Montserrat globally */
+}
+
+/* Apply Montserrat to everything */
+body,
+.md-typeset,
+.md-nav,
+.md-header,
+.md-tabs,
+.md-footer {
+  font-family: "Montserrat", sans-serif !important;
 }
 
 /* Base text */
@@ -14,14 +30,14 @@
   color: #ffffff; /* White text */
 }
 
-/* Headings */
+/* Headings = BLUE */
 .md-typeset h1,
 .md-typeset h2,
 .md-typeset h3,
 .md-typeset h4,
 .md-typeset h5,
 .md-typeset h6 {
-  color: #eeb22c; /* Yellow headings */
+  color: var(--md-accent-blue-color); /* Bright Blue */
   font-weight: 600;
 }
 
@@ -36,7 +52,7 @@
    Navigation (Sidebar + TOC)
    ========================== */
 
-/* Main sidebar links */
+/* Main sidebar links = RED */
 .md-nav__link {
   font-size: 1.05rem;
   font-weight: 500;
@@ -44,27 +60,27 @@
   padding: 8px 12px;
   border-radius: 6px;
   transition: background-color 0.2s ease;
-  color: #eeb22c !important; /* Yellow links */
+  color: var(--md-accent-fg-color) !important; /* Red */
 }
 
 /* Hover effect */
 .md-nav__link:hover {
-  background-color: rgba(238, 178, 44, 0.15); /* Subtle gold highlight */
+  background-color: rgba(255, 0, 0, 0.15); /* Subtle red highlight */
 }
 
-/* Active (selected) link style */
+/* Active (selected) link style = RED */
 .md-nav__link--active {
-  background-color: rgba(238, 178, 44, 0.25); /* Stronger gold highlight */
+  background-color: rgba(255, 0, 0, 0.25); /* Stronger red highlight */
   font-weight: 600;
-  color: #eeb22c !important; /* Keep text yellow */
+  color: var(--md-accent-fg-color) !important; /* Keep text red */
 }
 
-/* --- Table of Contents (right sidebar) --- */
+/* --- Table of Contents (right sidebar) = RED --- */
 .md-nav--secondary .md-nav__link {
   font-size: 0.85rem;
   font-weight: 400;
   opacity: 0.85;
-  color: #eeb22c !important; /* Yellow in TOC as well */
+  color: var(--md-accent-fg-color) !important; /* Red in TOC */
 }
 
 .md-nav--secondary .md-nav__link:hover {
@@ -89,9 +105,9 @@
   padding: 0.6em 1.2em; /* adds more breathing room */
 }
 
-/* Active tab */
+/* Active tab = BLUE */
 .md-tabs__link--active {
-  color: #eeb22c !important; /* highlight active tab in yellow */
+  color: var(--md-accent-blue-color) !important; /* Bright Blue */
   font-weight: 600;
 }
 
