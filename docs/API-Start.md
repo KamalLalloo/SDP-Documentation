@@ -1,14 +1,14 @@
 The Matches API is publicly accessible and does not currently require authentication.  
 All endpoints are available under the base URL:
 
-`https://sdp-webserver.onrender.com/api/v1`
+`https://sdp-webserver.onrender.com/api/`
 
 ### Example Request
 
 Create a new match:
 
 ```bash
-curl -X POST https://sdp-webserver.onrender.com/api/v1/matches \
+curl -X POST https://sdp-webserver.onrender.com/api/matches \
 -H "Content-Type: application/json" \
 -d '{
   "league_code": "local.u20",

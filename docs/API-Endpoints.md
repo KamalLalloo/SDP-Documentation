@@ -100,7 +100,7 @@ match minute.
 **Request Example:**
 
 ```bash
-curl -X POST https://sdp-webserver.onrender.com/api/v1/matches/1/finalize -H "Content-Type: application/json" -d '{}'
+curl -X POST https://sdp-webserver.onrender.com/api/matches/1/finalize -H "Content-Type: application/json" -d '{}'
 ```
 
 Possible Errors:
@@ -119,7 +119,7 @@ in_progress).
 **Example Request:**
 
 ```bash
-curl -X POST https://sdp-webserver.onrender.com/api/v1/matches/1/unfinalize -H "Content-Type: application/json" -d '{}'
+curl -X POST https://sdp-webserver.onrender.com/api/matches/1/unfinalize -H "Content-Type: application/json" -d '{}'
 ```
 
 ---
@@ -171,7 +171,7 @@ List matches with optional filters.
 **Example Request:**
 
 ```bash
-curl "https://sdp-webserver.onrender.com/api/v1/matches?league_code=local.u20&status=final"
+curl "https://sdp-webserver.onrender.com/api/matches?league_code=local.u20&status=final"
 ```
 
 **Example Response:**
@@ -240,7 +240,7 @@ Delete a specific event from the match timeline.
 **Example Request:**
 
 ```bash
-curl -X DELETE https://sdp-webserver.onrender.com/api/v1/matches/1/events/1
+curl -X DELETE https://sdp-webserver.onrender.com/api/matches/1/events/1
 ```
 
 Possible Errors:
