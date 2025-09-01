@@ -36,6 +36,7 @@ nav:
       - Tech stack: tech-stack.md
       - Third Party Code Documentation: Third-Party.md
       - Setup and Installation: setup.md
+      - Testing: Testing.md
       - Database Schema: Database.md
   - Sprints:
       - Sprint 1: Sprint1.md
