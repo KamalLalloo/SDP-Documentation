@@ -37,6 +37,7 @@ nav:
       - Third Party Code Documentation: Third-Party.md
       - Setup and Installation: setup.md
       - Testing: Testing.md
+      - User Feedback: User Feedback.md
       - Database Schema: Database.md
   - Sprints:
       - Sprint 1: Sprint1.md
