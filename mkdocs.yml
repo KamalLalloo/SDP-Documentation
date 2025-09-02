@@ -39,6 +39,7 @@ nav:
       - Testing: Testing.md
       - User Feedback: User Feedback.md
       - Database Schema: Database.md
+      - UML Diagrams: UML.md
   - Sprints:
       - Sprint 1: Sprint1.md
       - Sprint 2: Sprint2.md
