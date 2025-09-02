@@ -41,6 +41,7 @@ nav:
       - Database Schema: Database.md
   - Sprints:
       - Sprint 1: Sprint1.md
+      - Sprint 2: Sprint2.md
   - API Documentation:
       - Overview: API-Overview.md
       - Getting Started: API-Start.md
