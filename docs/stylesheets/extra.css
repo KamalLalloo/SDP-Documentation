@@ -7,9 +7,10 @@
 
 /* Override Material theme colors */
 :root {
-  --md-primary-fg-color: #2866a0; /* Primary blue (used in content links) */
-  --md-accent-fg-color: #ff0000; /* Accent red */
-  --md-accent-blue-color: #00aaff; /* Bright blue */
+  --md-primary-fg-color: #4caf50; /* Green */
+  --md-accent-fg-color: #4caf50; /* Green */
+  --md-accent-blue-color: #4caf50; /* Green */
+  --md-accent-green-color: #52aa57; /* Green (new variable for clarity) */
 
   --md-text-font-family: "Montserrat", sans-serif; /* Force Montserrat globally */
 }
@@ -30,14 +31,14 @@ body,
   color: #ffffff; /* White text */
 }
 
-/* Headings = BLUE */
+/* Headings = GREEN */
 .md-typeset h1,
 .md-typeset h2,
 .md-typeset h3,
 .md-typeset h4,
 .md-typeset h5,
 .md-typeset h6 {
-  color: var(--md-accent-blue-color); /* Bright Blue */
+  color: var(--md-accent-green-color);
   font-weight: 600;
 }
 
@@ -52,7 +53,12 @@ body,
    Navigation (Sidebar + TOC)
    ========================== */
 
-/* Main sidebar links = RED */
+/* Main sidebar links = GREEN */
+/* ==========================
+   Navigation (Sidebar + TOC)
+   ========================== */
+
+/* Main sidebar links = WHITE */
 .md-nav__link {
   font-size: 1.05rem;
   font-weight: 500;
@@ -60,32 +66,35 @@ body,
   padding: 8px 12px;
   border-radius: 6px;
   transition: background-color 0.2s ease;
-  color: var(--md-accent-fg-color) !important; /* Red */
+  color: #ffffff !important; /* White text */
 }
 
-/* Hover effect */
+/* Hover effect (keeps green background highlight) */
 .md-nav__link:hover {
-  background-color: rgba(255, 0, 0, 0.15); /* Subtle red highlight */
+  background-color: rgba(76, 175, 80, 0.15); /* Subtle green highlight */
+  color: #ffffff !important; /* Stay white on hover */
 }
 
-/* Active (selected) link style = RED */
+/* Active (selected) link style = GREEN highlight, WHITE text */
 .md-nav__link--active {
-  background-color: rgba(255, 0, 0, 0.25); /* Stronger red highlight */
+  background-color: rgba(76, 175, 80, 0.25); /* Stronger green highlight */
   font-weight: 600;
-  color: var(--md-accent-fg-color) !important; /* Keep text red */
+  color: #ffffff !important; /* White text */
 }
 
-/* --- Table of Contents (right sidebar) = RED --- */
+/* --- Table of Contents (right sidebar) = WHITE --- */
 .md-nav--secondary .md-nav__link {
   font-size: 0.85rem;
   font-weight: 400;
   opacity: 0.85;
-  color: var(--md-accent-fg-color) !important; /* Red in TOC */
+  color: #ffffff !important; /* White text in TOC */
 }
 
 .md-nav--secondary .md-nav__link:hover {
   opacity: 1;
-  color: #ffffff !important; /* White on hover for contrast */
+  color: var(
+    --md-accent-green-color
+  ) !important; /* Green on hover for contrast */
 }
 
 /* ==========================
@@ -102,12 +111,12 @@ body,
 .md-tabs__link {
   font-size: 1.05rem; /* slightly larger than default */
   font-weight: 500;
-  padding: 0.6em 1.2em; /* adds more breathing room */
+  padding: 0.6em 1.2em;
 }
 
-/* Active tab = BLUE */
+/* Active tab = GREEN */
 .md-tabs__link--active {
-  color: var(--md-accent-blue-color) !important; /* Bright Blue */
+  color: var(--md-accent-green-color) !important;
   font-weight: 600;
 }
 
@@ -117,23 +126,23 @@ body,
 
 /* Increase header bar height */
 .md-header {
-  min-height: 40px; /* default ~56px */
+  min-height: 40px;
 }
 
 /* Adjust title alignment */
 .md-header__title {
-  line-height: 45px; /* match new height */
+  line-height: 45px;
 }
 
 /* Adjust navigation tabs */
 .md-tabs {
-  height: 90px; /* taller tab bar */
+  height: 90px;
 }
 .md-tabs__link {
-  line-height: 37px; /* vertically center text */
-  padding: 0 1.2em; /* spacing */
+  line-height: 37px;
+  padding: 0 1.2em;
 }
 .md-header__button.md-logo img {
-  height: 90px; /* adjust size */
+  height: 120px;
   width: auto;
 }
