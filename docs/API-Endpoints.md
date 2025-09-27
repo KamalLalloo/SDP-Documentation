@@ -1,6 +1,42 @@
-This section describes all available endpoints in the Matches API.
-Each endpoint includes a description, parameters, request/response
-examples, and possible error codes.
+# API Endpoints
+
+This section describes all available endpoints in the Matches API.  
+Each endpoint includes a description, parameters, request/response examples, and possible error codes.
+
+---
+
+## Endpoint Summary
+
+| Method | Endpoint                           | Description                                |
+| ------ | ---------------------------------- | ------------------------------------------ |
+| GET    | `/api`                             | Health check, returns "Hello from the API" |
+| GET    | `/status`                          | Server status JSON                         |
+| GET    | `/names`                           | Get all usernames                          |
+| GET    | `/checkID`                         | Check if a user ID exists                  |
+| GET    | `/teams`                           | Get all teams                              |
+| POST   | `/teams`                           | Create (or upsert) a team                  |
+| GET    | `/favourite-teams/:userId`         | Get user’s favourite teams                 |
+| POST   | `/favourite-teams`                 | Add favourite team for user                |
+| DELETE | `/favourite-teams/:userId/:teamId` | Remove favourite team                      |
+| POST   | `/addUser`                         | Add a new user                             |
+| POST   | `/matches`                         | Create a match                             |
+| PATCH  | `/matches/:id`                     | Partially update match                     |
+| PUT    | `/matches/:id`                     | Replace/update match fully                 |
+| POST   | `/matches/:id/score`               | Update only the scores                     |
+| POST   | `/matches/:id/finalize`            | Finalize a match                           |
+| POST   | `/matches/:id/unfinalize`          | Reopen a finalized match                   |
+| PATCH  | `/matches/:id/possession`          | Update possession stats                    |
+| DELETE | `/matches/:id`                     | Delete a scheduled match                   |
+| GET    | `/matches/:id`                     | Get match with events                      |
+| GET    | `/matches/:id/details`             | Get match with events + squads             |
+| PATCH  | `/matches/:id/extend`              | Extend match duration                      |
+| POST   | `/matches/:id/events`              | Add a match event                          |
+| DELETE | `/matches/:id/events/:eventId`     | Delete a match event                       |
+| GET    | `/matches`                         | List matches with filters                  |
+| POST   | `/matches/:id/reports`             | Add a report to a match                    |
+| GET    | `/matches/:id/reports`             | Get reports for a match                    |
+| DELETE | `/matches/:id/reports/:reportId`   | Delete a report                            |
+| GET    | `/watchalongs`                     | Fetch live watchalongs or clips            |
 
 ---
 
@@ -8,7 +44,6 @@ examples, and possible error codes.
 
 ### POST /matches
 
-**Description:**\
 Create a new match (scheduled or completed).
 
 **Request Body (JSON):**
@@ -26,7 +61,7 @@ Create a new match (scheduled or completed).
 }
 ```
 
-Example Response:
+**Example Response:**
 
 ```json
 {
@@ -45,78 +80,64 @@ Example Response:
 }
 ```
 
-Possible Errors:
+**Errors:**
 
-- 400 Bad Request -- Missing required fields
-- 500 Internal Server Error -- Database error
+- 400 Bad Request – Missing required fields
+- 500 Internal Server Error – Database error
 
 ---
 
 ### PATCH /matches/:id
 
-**Description:**\
-Update match fields such as scores, status, minute, attendance, or
-venue. Supports partial updates.
+Update match fields (scores, status, minute, etc.). Supports partial updates.
 
-**Request Body Example:**
+**Request Example:**
 
 ```json
-{
-  "home_score": 2,
-  "away_score": 1,
-  "minute": 60
-}
+{ "home_score": 2, "away_score": 1, "minute": 60 }
 ```
 
-Possible Errors:
+**Errors:**
 
-- 400 Bad Request -- Invalid update fields
-- 404 Not Found -- Match not found
+- 400 Bad Request – Invalid fields
+- 404 Not Found – Match not found
 
 ---
 
 ### POST /matches/:id/score
 
-**Description:**\
 Convenience endpoint to update only the scores.
 
-**Request Body Example:**
+**Request Example:**
 
 ```json
-{
-  "home_score": 3,
-  "away_score": 2
-}
+{ "home_score": 3, "away_score": 2 }
 ```
 
 ---
 
 ### POST /matches/:id/finalize
 
-**Description:**\
-Finalize a match. Requires scores to be present. Locks scores and clears
-match minute.
+Finalize a match. Requires scores.
 
-**Request Example:**
+**Example:**
 
 ```bash
 curl -X POST https://sdp-webserver.onrender.com/api/matches/1/finalize -H "Content-Type: application/json" -d '{}'
 ```
 
-Possible Errors:
+**Errors:**
 
-- 400 Bad Request -- Missing scores
-- 404 Not Found -- Match not found
+- 400 Bad Request – Missing scores
+- 404 Not Found – Match not found
 
 ---
 
 ### POST /matches/:id/unfinalize
 
-**Description:**\
-Revert a finalized match back to editable state (e.g., status changed to
-in_progress).
+Revert a finalized match back to editable state.
 
-**Example Request:**
+**Example:**
 
 ```bash
 curl -X POST https://sdp-webserver.onrender.com/api/matches/1/unfinalize -H "Content-Type: application/json" -d '{}'
@@ -124,11 +145,22 @@ curl -X POST https://sdp-webserver.onrender.com/api/matches/1/unfinalize -H "Con
 
 ---
 
+### PATCH /matches/:id/possession
+
+Update possession stats. `home_possession + away_possession` must equal 100.
+
+---
+
+### DELETE /matches/:id
+
+Delete a scheduled match.  
+**Note:** Only `scheduled` matches can be deleted.
+
+---
+
 ### GET /matches/:id
 
-**Description:**\
-Retrieve full match details, including team/venue names and match
-events.
+Retrieve full match details (teams, venue, events).
 
 **Example Response:**
 
@@ -136,61 +168,35 @@ events.
 {
   "id": 1,
   "league_code": "local.u20",
-  "season_year": 2025,
   "status": "final",
-  "home_team_name": "Soweto Stars",
-  "away_team_name": "Parktown United",
-  "venue_name": "Zoo Lake",
   "home_score": 3,
   "away_score": 2,
-  "events": [
-    {
-      "event_id": 1,
-      "event_type": "goal",
-      "team_id": 1,
-      "player_name": "Thabo M.",
-      "minute": 12
-    }
-  ]
+  "events": [{ "event_id": 1, "event_type": "goal", "minute": 12 }]
 }
 ```
 
 ---
 
+### GET /matches/:id/details
+
+Retrieve a match with squads (`lineupTeam1`, `lineupTeam2`) and events.
+
+---
+
+### PATCH /matches/:id/extend
+
+Extend match duration (e.g., 90 → 120 minutes).
+
+---
+
 ### GET /matches
 
-**Description:**\
-List matches with optional filters.
+List matches with optional filters:
 
-**Query Parameters:**
-
-- league_code (optional)
-- status (optional: scheduled, in_progress, final)
-- date_from and date_to (optional, ISO 8601 format)
-
-**Example Request:**
-
-```bash
-curl "https://sdp-webserver.onrender.com/api/matches?league_code=local.u20&status=final"
-```
-
-**Example Response:**
-
-```json
-[
-  {
-    "id": 1,
-    "league_code": "local.u20",
-    "season_year": 2025,
-    "status": "final",
-    "home_team_name": "Soweto Stars",
-    "away_team_name": "Parktown United",
-    "venue_name": "Zoo Lake",
-    "home_score": 3,
-    "away_score": 2
-  }
-]
-```
+- `league_code`
+- `status` (scheduled, in_progress, final)
+- `from`, `to` (ISO 8601 date range)
+- `type` (live, past, upcoming)
 
 ---
 
@@ -198,52 +204,59 @@ curl "https://sdp-webserver.onrender.com/api/matches?league_code=local.u20&statu
 
 ### POST /matches/:id/events
 
-**Description:**\
-Add a timeline event (goal, own goal, penalty, yellow, red, etc.) with
-player, team, and minute.
+Add a timeline event (goal, own goal, yellow, red, etc.).
 
-**Request Body Example:**
+**Request Example:**
 
 ```json
-{
-  "event_type": "goal",
-  "team_id": 1,
-  "player_name": "Thabo M.",
-  "minute": 12
-}
+{ "event_type": "goal", "team_id": 1, "player_name": "Thabo M.", "minute": 12 }
 ```
-
-**Example Response:**
-
-```json
-{
-  "event_id": 1,
-  "event_type": "goal",
-  "team_id": 1,
-  "player_name": "Thabo M.",
-  "minute": 12
-}
-```
-
-Possible Errors:
-
-- 400 Bad Request -- Invalid event data
-- 404 Not Found -- Match not found
 
 ---
 
 ### DELETE /matches/:id/events/:eventId
 
-**Description:**\
-Delete a specific event from the match timeline.
+Delete a specific event. Adjusts score if necessary.
 
-**Example Request:**
+---
 
-```bash
-curl -X DELETE https://sdp-webserver.onrender.com/api/matches/1/events/1
-```
+## 3.3 Reports
 
-Possible Errors:
+### POST /matches/:id/reports
 
-- 404 Not Found -- Event not found
-- 400 Bad Request -- Invalid match or event ID
+Add a text report to a match.
+
+### GET /matches/:id/reports
+
+Get all reports for a match.
+
+### DELETE /matches/:id/reports/:reportId
+
+Delete a specific report.
+
+---
+
+## 3.4 Teams & Users
+
+- **GET /teams** – List all teams
+- **POST /teams** – Create or upsert a team
+- **GET /names** – List usernames
+- **GET /checkID** – Check if user ID exists
+- **POST /addUser** – Add new user
+
+**Favourites API:**
+
+- **GET /favourite-teams/:userId** – Get favourites
+- **POST /favourite-teams** – Add favourite team
+- **DELETE /favourite-teams/:userId/:teamId** – Remove favourite
+
+---
+
+## 3.5 Watchalongs
+
+### GET /watchalongs
+
+Fetch YouTube live watchalongs or fan reaction clips.  
+Supports fallback samples if no YouTube API key is set.
+
+---

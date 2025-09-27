@@ -38,11 +38,13 @@ nav:
       - Setup and Installation: setup.md
       - Testing: Testing.md
       - User Feedback: User Feedback.md
+      - User Feedback 2: User Feedback2.md
       - Database Schema: Database.md
       - UML Diagrams: UML.md
   - Sprints:
       - Sprint 1: Sprint1.md
       - Sprint 2: Sprint2.md
+      - Sprint 3: Sprint3.md
   - API Documentation:
       - Overview: API-Overview.md
       - Getting Started: API-Start.md
