@@ -41,6 +41,7 @@ nav:
       - User Feedback 2: User Feedback2.md
       - Database Schema: Database.md
       - UML Diagrams: UML.md
+      - Security Report: Security.md
   - Sprints:
       - Sprint 1: Sprint1.md
       - Sprint 2: Sprint2.md
