@@ -34,6 +34,7 @@ nav:
       - Team: team.md
       - User Stories: user_stories.md
       - Tech stack: tech-stack.md
+      - User Guide: User-Guide.md
       - Third Party Code Documentation: Third-Party.md
       - Setup and Installation: setup.md
       - Testing: Testing.md
